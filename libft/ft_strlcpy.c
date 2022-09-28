@@ -1,22 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mherrezu <mherrezu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/23 16:08:11 by mherrezu          #+#    #+#             */
-/*   Updated: 2022/09/28 18:26:38 by mherrezu         ###   ########.fr       */
+/*   Created: 2022/08/25 10:09:40 by mherrezu          #+#    #+#             */
+/*   Updated: 2022/09/28 19:45:52 by mherrezu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isascii (int c)
+#include <stdio.h>
+
+unsigned int	ft_strlcpy(char restrict *dest, char restrict *src, unsigned int size)
 {
-	char    a;
-    char a = c + '0';
-    
-    if (c >= 0 && c <= 177)
-		return ('0');
-	else
-		return ('1');
+	unsigned int	counter;
+
+	counter = 0;
+	while (counter <= (size - 1))
+	{
+		dest[counter] = src[counter];
+		counter++;
+	}
+	counter--;
+	return (counter);
 }

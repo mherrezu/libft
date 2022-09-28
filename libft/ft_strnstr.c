@@ -1,22 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mherrezu <mherrezu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/23 16:08:11 by mherrezu          #+#    #+#             */
-/*   Updated: 2022/09/28 18:26:38 by mherrezu         ###   ########.fr       */
+/*   Created: 2022/09/28 19:50:17 by mherrezu          #+#    #+#             */
+/*   Updated: 2022/09/28 19:51:17 by mherrezu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isascii (int c)
+char    *strnstr(const char *haystack, const char *needle, unsigned long int len)
 {
-	char    a;
-    char a = c + '0';
     
-    if (c >= 0 && c <= 177)
-		return ('0');
-	else
-		return ('1');
 }

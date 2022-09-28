@@ -1,22 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mherrezu <mherrezu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mherrezu <mherrezu@student.42malaga.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/23 16:08:11 by mherrezu          #+#    #+#             */
-/*   Updated: 2022/09/28 18:26:38 by mherrezu         ###   ########.fr       */
+/*   Created: 2022/09/22 19:58:28 by mherrezu          #+#    #+#             */
+/*   Updated: 2022/09/23 15:03:28 by mherrezu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isascii (int c)
+char	ft_isdigit (char c)
 {
-	char    a;
-    char a = c + '0';
-    
-    if (c >= 0 && c <= 177)
-		return ('0');
-	else
+	if (c <= 48 && c >= 57)
 		return ('1');
-}
+	else
+		return ('0');
+}	
