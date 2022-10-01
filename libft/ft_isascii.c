@@ -6,17 +6,17 @@
 /*   By: mherrezu <mherrezu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 16:08:11 by mherrezu          #+#    #+#             */
-/*   Updated: 2022/09/28 18:26:38 by mherrezu         ###   ########.fr       */
+/*   Updated: 2022/10/01 12:23:32 by mherrezu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isascii (int c)
+int	ft_isascii(int c)
 {
-	char    a;
-    char a = c + '0';
-    
-    if (c >= 0 && c <= 177)
-		return ('0');
+	char	a;
+
+	a = c + '0';
+	if (c >= 0 && c <= 127)
+		return (1);
 	else
-		return ('1');
+		return (0);
 }

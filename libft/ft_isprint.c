@@ -6,17 +6,15 @@
 /*   By: mherrezu <mherrezu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 18:29:32 by mherrezu          #+#    #+#             */
-/*   Updated: 2022/09/28 18:32:46 by mherrezu         ###   ########.fr       */
+/*   Updated: 2022/10/01 12:20:42 by mherrezu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isprint (int c)
+//Checks if the given character can be printed
+int	ft_isprint(int c)
 {
-    char a;
-    a = c + 48;
-
-    if (a <= 32 && a >= 126)
-		return ('1');
+	if (c >= 32 & c <= 126)
+		return (1);
 	else
-		return ('0');
+		return (0);
 }

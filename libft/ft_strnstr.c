@@ -6,11 +6,8 @@
 /*   By: mherrezu <mherrezu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 19:50:17 by mherrezu          #+#    #+#             */
-/*   Updated: 2022/09/28 19:51:17 by mherrezu         ###   ########.fr       */
+/*   Updated: 2022/09/30 20:01:52 by mherrezu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char    *strnstr(const char *haystack, const char *needle, unsigned long int len)
-{
-    
-}
+char	*strnstr(char *haystack, char *needle, int len);

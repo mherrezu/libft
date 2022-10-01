@@ -6,14 +6,14 @@
 /*   By: mherrezu <mherrezu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/28 13:33:41 by mherrezu          #+#    #+#             */
-/*   Updated: 2022/09/28 19:45:25 by mherrezu         ###   ########.fr       */
+/*   Updated: 2022/09/30 20:01:02 by mherrezu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <string.h>
 
-unsigned int	ft_strlcat(char restrict *dest, char restrict *src, unsigned int size)
+int	ft_strlcat(char *dest, char *src, unsigned int size)
 {
 	unsigned int	d;
 	unsigned int	s;
