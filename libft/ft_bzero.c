@@ -1,22 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mherrezu <mherrezu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/22 19:58:28 by mherrezu          #+#    #+#             */
-/*   Updated: 2022/10/01 16:16:56 by mherrezu         ###   ########.fr       */
+/*   Created: 2022/10/01 20:16:54 by mherrezu          #+#    #+#             */
+/*   Updated: 2022/10/01 20:59:09 by mherrezu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//Checks if the given character is a numeric character
+//writes n zeroed bytes to the string s.  If n is zero, bzero() does nothing.
+//Poner a 0 la región de memoria
 #include "libft.h"
 
-int	ft_isdigit(int c)
+void	ft_bzero(void *s, size_t n)
 {
-	if (c >= 48 && c <= 57)
-		return (1);
-	else
-		return (0);
-}	
+	unsigned int	count;
+	char			*s_aux;
+
+	s_aux = (char *) s;
+	count = 0;
+	while (n > count)
+	{
+		s_aux[count] = 0;
+		count++;
+	}
+}

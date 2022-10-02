@@ -5,13 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mherrezu <mherrezu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/27 09:42:54 by mherrezu          #+#    #+#             */
-/*   Updated: 2022/09/28 19:36:17 by mherrezu         ###   ########.fr       */
+/*   Created: 2022/10/01 11:42:54 by mherrezu          #+#    #+#             */
+/*   Updated: 2022/10/01 19:49:22 by mherrezu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
 int	ft_strncmp(const char *s1, const char *s2, unsigned int n)
 {

@@ -6,9 +6,12 @@
 /*   By: mherrezu <mherrezu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 16:08:11 by mherrezu          #+#    #+#             */
-/*   Updated: 2022/10/01 12:23:32 by mherrezu         ###   ########.fr       */
+/*   Updated: 2022/10/01 15:19:42 by mherrezu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+//test for ASCII character
+#include "libft.h"
 
 int	ft_isascii(int c)
 {

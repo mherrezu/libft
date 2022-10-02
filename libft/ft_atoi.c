@@ -5,13 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mherrezu <mherrezu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/30 09:27:29 by mherrezu          #+#    #+#             */
-/*   Updated: 2022/09/28 19:36:57 by mherrezu         ###   ########.fr       */
+/*   Created: 2022/10/02 14:04:46 by mherrezu          #+#    #+#             */
+/*   Updated: 2022/10/02 14:08:01 by mherrezu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
+#include "libft.h"
 
 int	ft_atoi(const char *str)
 {
@@ -26,7 +25,7 @@ int	ft_atoi(const char *str)
 		c++;
 	}
 	sign = 1;
-	while (str[c] == '+' || str[c] == '-')
+	if (str[c] == '+' || str[c] == '-')
 	{
 		if (str[c] == '-')
 			sign = sign * (-1);

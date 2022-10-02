@@ -5,23 +5,27 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mherrezu <mherrezu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/25 10:09:40 by mherrezu          #+#    #+#             */
-/*   Updated: 2022/09/30 20:01:08 by mherrezu         ###   ########.fr       */
+/*   Created: 2022/10/01 10:09:40 by mherrezu          #+#    #+#             */
+/*   Updated: 2022/10/01 19:48:27 by mherrezu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+//strlcpy() copies up to dstsize - 1 characters from the string src to dst,
+//NUL-terminating the result if dstsize is not 0.
+#include "libft.h"
 
-int	ft_strlcpy(char *dest, char *src, unsigned int size)
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	unsigned int	counter;
+	unsigned int	c;
 
-	counter = 0;
-	while (counter <= (size - 1))
+	c = 0;
+	if (dstsize == 0)
+		return (ft_strlen(src));
+	while ((c < (dstsize - 1)) && (src[c] != '\0'))
 	{
-		dest[counter] = src[counter];
-		counter++;
+		dst[c] = src[c];
+		c++;
 	}
-	counter--;
-	return (counter);
+	dst[c] = '\0';
+	return (ft_strlen(src));
 }

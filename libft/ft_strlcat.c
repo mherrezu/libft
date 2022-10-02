@@ -5,37 +5,38 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mherrezu <mherrezu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/28 13:33:41 by mherrezu          #+#    #+#             */
-/*   Updated: 2022/09/30 20:01:02 by mherrezu         ###   ########.fr       */
+/*   Created: 2022/10/01 13:33:41 by mherrezu          #+#    #+#             */
+/*   Updated: 2022/10/01 19:48:41 by mherrezu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
+// strlcat() appends string src to the end of dst.  It will append at most
+//dstsize - strlen(dst) - 1 characters.
+#include "libft.h"
 
 int	ft_strlcat(char *dest, char *src, unsigned int size)
 {
-	unsigned int	d;
-	unsigned int	s;
-	unsigned int	c;
+	unsigned int	c_dest;
+	unsigned int	t_dest;
+	unsigned int	c_src;
 
-	d = 0;
-	s = 0;
-	c = 0;
-	while (dest[d] != '\0')
+	c_dest = 0;
+	c_src = 0;
+	while (dest[c_dest] != '\0')
 	{
-		d++;
-		c++;
+		c_dest++;
 	}
-	while (src[s] != '\0' && c < (size -1))
+	t_dest = c_dest;
+	if (size == 0 || t_dest >= size)
+		return (ft_strlen(src) + size);
+	while ((src[c_src] != '\0') && (c_src < (size - t_dest - 1)))
 	{
-		dest[d] = src[s];
-		d++;
-		s++;
-		c++;
+		dest[c_dest] = src[c_src];
+		c_dest++;
+		c_src++;
 	}
-	dest[d] = '\0';
-	return (c);
+	dest[c_dest] = '\0';
+	return (t_dest + ft_strlen(src));
 }
 /*int main()
 {

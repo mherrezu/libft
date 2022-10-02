@@ -1,22 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mherrezu <mherrezu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/22 19:58:28 by mherrezu          #+#    #+#             */
-/*   Updated: 2022/10/01 16:16:56 by mherrezu         ###   ########.fr       */
+/*   Created: 2022/10/01 19:49:27 by mherrezu          #+#    #+#             */
+/*   Updated: 2022/10/01 20:10:34 by mherrezu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//Checks if the given character is a numeric character
+//Converts the given character to uppercase according to the character 
+//conversion rules defined by the currently installed C locale.
 #include "libft.h"
 
-int	ft_isdigit(int c)
+int	ft_toupper(int ch)
 {
-	if (c >= 48 && c <= 57)
-		return (1);
+	char			result;
+
+	if (!(ch >= 97 && ch <= 122))
+		return (ch);
 	else
-		return (0);
-}	
+	{
+		result = ch - 32;
+		return ((int)result);
+	}
+}
