@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mherrezu <mherrezu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/01 11:42:54 by mherrezu          #+#    #+#             */
-/*   Updated: 2022/10/02 18:20:17 by mherrezu         ###   ########.fr       */
+/*   Created: 2022/10/02 18:01:50 by mherrezu          #+#    #+#             */
+/*   Updated: 2022/10/02 18:30:06 by mherrezu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//compares not more than n characters.
-//characters that appear after a `\0' character are not compared.
+//compares byte string s1 against byte string s2.  Both strings are assumed to 
+//be n bytes long.
 #include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, unsigned int n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	unsigned int	c;
 	unsigned char	*s1_aux;
@@ -23,7 +23,7 @@ int	ft_strncmp(const char *s1, const char *s2, unsigned int n)
 	s1_aux = (unsigned char *) s1;
 	s2_aux = (unsigned char *) s2;
 	c = 0;
-	while (c < n && (s1_aux[c] != '\0' || s2_aux[c] != '\0'))
+	while (c < n)
 	{
 		if (s1_aux[c] != s2_aux[c])
 			return (s1_aux[c] - s2_aux[c]);
@@ -31,15 +31,3 @@ int	ft_strncmp(const char *s1, const char *s2, unsigned int n)
 	}
 	return (0);
 }
-/*int main()
-{
-	const char s1[] = "holP";
-	const char s2[] = "";
-	unsigned	int n;
-
-	n = 100;
-	
-	printf("programa :%d\n", strncmp(s1, s2, n));
-	printf("%d", ft_strncmp(s1, s2, n));
-	return(0);
-}*/
