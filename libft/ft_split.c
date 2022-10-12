@@ -1,33 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mherrezu <mherrezu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/02 16:36:29 by mherrezu          #+#    #+#             */
-/*   Updated: 2022/10/03 20:53:31 by mherrezu         ###   ########.fr       */
+/*   Created: 2022/10/12 18:23:03 by mherrezu          #+#    #+#             */
+/*   Updated: 2022/10/12 19:40:12 by mherrezu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//locates the first occurrence of c (converted to an unsigned char) in string s.
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+int	count_words(char *s, char c)
 {
-	unsigned char	*s_aux;
-	unsigned char	c_aux;
-	unsigned int	counter;
+	int		c_words;
+	int		i;
 
-	s_aux = (unsigned char *) s;
-	c_aux = (unsigned char) c;
-	counter = 0;
-	while (counter < n)
+	c_words = 1;
+	i = 0;
+	while (s[i])
 	{
-		if (*s_aux == c_aux)
-			return (s_aux);
-		counter ++;
-		s_aux ++;
+		if (s[i] == c)
+			c_words++;
+		i++;
 	}
+	printf("Palabras: %i", c_words);
+	return (c_words);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	char	**array;
+	char	*str;
+
+	str = (char *) s;
+	count_words(str, c);
+	return (array);
+}
+
+int	main(void)
+{
+	char const	*s;
+	char		c;
+
+	s = "hola como te llamas";
+	c = ' ';
+	ft_split(s, c);
 	return (0);
 }

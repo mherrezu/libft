@@ -1,33 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mherrezu <mherrezu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/02 16:36:29 by mherrezu          #+#    #+#             */
-/*   Updated: 2022/10/03 20:53:31 by mherrezu         ###   ########.fr       */
+/*   Created: 2022/10/12 17:15:47 by mherrezu          #+#    #+#             */
+/*   Updated: 2022/10/12 17:30:46 by mherrezu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//locates the first occurrence of c (converted to an unsigned char) in string s.
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	unsigned char	*s_aux;
-	unsigned char	c_aux;
-	unsigned int	counter;
+	int		i;
+	char	*string;
 
-	s_aux = (unsigned char *) s;
-	c_aux = (unsigned char) c;
-	counter = 0;
-	while (counter < n)
+	i = 0;
+	string = (char *)malloc((ft_strlen(s) + 1) * sizeof(char));
+	if (!string)
+		return (0);
+	while (s[i] != '\0')
 	{
-		if (*s_aux == c_aux)
-			return (s_aux);
-		counter ++;
-		s_aux ++;
+		string[i] = f(i, s[i]);
+		i++;
 	}
-	return (0);
+	string[i] = '\0';
+	return (string);
 }

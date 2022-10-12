@@ -1,46 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mherrezu <mherrezu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/02 18:40:40 by mherrezu          #+#    #+#             */
-/*   Updated: 2022/10/09 18:30:18 by mherrezu         ###   ########.fr       */
+/*   Created: 2022/10/09 17:12:58 by mherrezu          #+#    #+#             */
+/*   Updated: 2022/10/12 18:18:54 by mherrezu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//locates the last occurrence of c (converted to a char) in the string pointed 
-//to by s.  The terminating null character is considered to be part of the 
+//locates the first occurrence of c (converted to a char) in the string pointed
+//to by s.  The terminating null character is considered to be part of the
 //string; therefore if c is `\0', the functions locate the terminating `\0'.
 #include "libft.h"
 
-char	*ft_strrchr( const char *str, int ch )
+char	*ft_strchr(const char *str, int ch)
 {
-	char			*s;
-	char			c;
-	char			*res;
+	char	*s;
 
-	s = (char *) str;
-	c = (char) ch;
-	res = 0;
+	s = (char *)str;
 	while (*s != '\0')
 	{
-		if (*s == c)
-			res = s;
+		if (*s == (unsigned char)ch)
+			return (s);
 		s++;
 	}
-	if (c == '\0')
-		res = s;
-	return (res);
+	if ((unsigned char)ch == '\0')
+		return (s);
+	return (0);
 }
 
 // int	main(void)
 // {
-// const char  str[] = "Holaquetal";
-// const char  ch = 'H';
-// char        *ret;
-// ret = ft_strrchr(str, ch);
-// printf("String after |%c| is - |%s|\n", ch, ret);
-// return (0);
+// 	char const	*str = "hola que tal hola";
+// 	int			ch = "";
+
+// 	printf("Final: %s", ft_strtrim(s1, set));
+// 	return (0);
 // }

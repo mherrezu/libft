@@ -1,33 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mherrezu <mherrezu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/02 16:36:29 by mherrezu          #+#    #+#             */
-/*   Updated: 2022/10/03 20:53:31 by mherrezu         ###   ########.fr       */
+/*   Created: 2022/10/07 19:24:32 by mherrezu          #+#    #+#             */
+/*   Updated: 2022/10/08 12:36:30 by mherrezu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//locates the first occurrence of c (converted to an unsigned char) in string s.
+// function contiguously allocates enough space for count objects that are size 
+// bytes of memory each and returns a pointer to the allocated memory. The 
+// allocated memory is filled with bytes of value zero.
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+void	*ft_calloc(size_t count, size_t size)
 {
-	unsigned char	*s_aux;
-	unsigned char	c_aux;
-	unsigned int	counter;
+	int		*ptr;
+	size_t	i;
 
-	s_aux = (unsigned char *) s;
-	c_aux = (unsigned char) c;
-	counter = 0;
-	while (counter < n)
+	i = 0;
+	ptr = (int *) malloc (count * size);
+	if (!ptr)
 	{
-		if (*s_aux == c_aux)
-			return (s_aux);
-		counter ++;
-		s_aux ++;
+		free (ptr);
+		return (NULL);
 	}
-	return (0);
+	else
+	{
+		ft_bzero (ptr, count * size);
+		return (ptr);
+	}
 }

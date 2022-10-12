@@ -1,33 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mherrezu <mherrezu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/02 16:36:29 by mherrezu          #+#    #+#             */
-/*   Updated: 2022/10/03 20:53:31 by mherrezu         ###   ########.fr       */
+/*   Created: 2022/10/12 17:32:58 by mherrezu          #+#    #+#             */
+/*   Updated: 2022/10/12 17:43:35 by mherrezu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//locates the first occurrence of c (converted to an unsigned char) in string s.
-#include "libft.h"
-
-void	*ft_memchr(const void *s, int c, size_t n)
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	unsigned char	*s_aux;
-	unsigned char	c_aux;
-	unsigned int	counter;
+	int		i;
 
-	s_aux = (unsigned char *) s;
-	c_aux = (unsigned char) c;
-	counter = 0;
-	while (counter < n)
+	i = 0;
+	while (*s != '\0')
 	{
-		if (*s_aux == c_aux)
-			return (s_aux);
-		counter ++;
-		s_aux ++;
+		f(i, s);
+		s++;
+		i++;
 	}
-	return (0);
 }
