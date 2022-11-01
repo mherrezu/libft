@@ -6,7 +6,7 @@
 #    By: mherrezu <mherrezu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/30 17:51:43 by mherrezu          #+#    #+#              #
-#    Updated: 2022/10/12 18:22:45 by mherrezu         ###   ########.fr        #
+#    Updated: 2022/11/01 19:37:41 by mherrezu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,13 @@ SRCS = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 		ft_putendl_fd.c ft_putnbr_fd.c ft_strjoin.c ft_strtrim.c ft_itoa.c ft_strmapi.c \
 		ft_striteri.c ft_split.c
 
-OBJS = $(SRCS:.c=.o)
+BONUS = ft_lstnew_bonus.c ft_lstsize_bonus.c ft_lstlast_bonus.c ft_lstadd_back_bonus.c\
+		ft_lstadd_front_bonus.c ft_lstdelone_bonus.c ft_lstclear_bonus.c \
+		ft_lstiter_bonus.c ft_lstmap_bonus.c
+
+OBJS = $(SRCS:.c=.o) 
+
+BOBJ = $(BONUS:.c=.o)
 
 CC = gcc
 
@@ -34,8 +40,11 @@ $(NAME): $(OBJS)
 			$(CC) -c $(CFLAGS) $(SRCS)
 			ar crs $(NAME) $(OBJS)
 
+bonus: $(OBJS) $(BOBJ) $(SRCS) $(BONUS)
+			ar crs $(NAME) $(OBJS) $(BOBJ) $(SRCS)
+
 clean:
-				$(RM) $(OBJS)
+				$(RM) $(OBJS) $(BOBJ)
 
 fclean: 	clean
 						$(RM) $(NAME)
