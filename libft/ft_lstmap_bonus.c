@@ -6,7 +6,7 @@
 /*   By: mherrezu <mherrezu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 19:36:01 by mherrezu          #+#    #+#             */
-/*   Updated: 2022/11/01 19:36:56 by mherrezu         ###   ########.fr       */
+/*   Updated: 2022/11/02 19:41:33 by mherrezu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,27 @@ falta. */
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	
+	t_list	*new;
+	t_list	*aux;
+
+	if (!lst || !del)
+		return (0);
+	new = ft_lstnew(f(lst->content));
+	if (!new)
+		return (0);
+	aux = new;
+	lst = lst->next;
+	while (lst)
+	{
+		new->next = ft_lstnew(f(lst->content));
+		if (!new->next)
+		{
+			ft_lstclear(&aux, del);
+			return (0);
+		}
+		new = new->next;
+		lst = lst->next;
+	}
+	new->next = NULL;
+	return (aux);
 }
